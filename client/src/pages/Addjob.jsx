@@ -1,8 +1,13 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import Quill from 'quill';
 import { JobCategories, JobLocations } from '../assets/assets';
+import { AppContext } from '../context/AppContext';
+import { toast } from 'react-toastify';
+import axios from 'axios';
 
 const Addjob = () => {
+
+    const { serverUrl, companyToken } = useContext(AppContext);
 
     const [ title, setTitle ] = useState('');
     const [ location, setLocation ] = useState('Bangalore');
@@ -13,17 +18,46 @@ const Addjob = () => {
     const editorRef = useRef(null);
     const quillRef = useRef(null);
 
+    const onSubmitHandler = async(e)=> {
+        
+        e.preventDefault();
+        
+        try {
+            
+            const description = quillRef.current.root.innerHTML;
+
+            const { data } = await axios.post(
+                serverUrl + '/api/company/post-job', 
+                {title, description, location, category, level, salary}, 
+                {headers: {token: companyToken}}
+            );
+
+            if (data.success) {
+                toast.success(data.message);
+                setTitle('');
+                setSalary(0);
+                quillRef.current.root.innerHTML = "";
+            } else {
+                toast.error(data.message);
+            }
+
+        } catch (error) {
+            toast.error(error.message);
+        };
+
+    };
+
     useEffect(()=> {
         if (!quillRef.current && editorRef.current) {
             quillRef.current = new Quill(editorRef.current, {
                 theme: 'snow',
             })
-        }
+        };
     }, []);
 
     return (
     
-        <form className='container p-4 flex flex-col w-full items-start gap-3'>
+        <form onSubmit={onSubmitHandler} className='container p-4 flex flex-col w-full items-start gap-3'>
             
             <div className='w-full'>
                 <p className='mb-2'>Job Title</p>
@@ -50,7 +84,7 @@ const Addjob = () => {
                 </div>
 
                 <div className='mb-2'>
-                    <p>Job Category</p>
+                    <p>Location</p>
                     <select className='w-full px-3 py-2 border-2 rounded' onChange={(e)=> setLocation(e.target.value)}>
                         {
                             JobLocations.map((location, index)=> (
@@ -61,7 +95,7 @@ const Addjob = () => {
                 </div>
 
                 <div className='mb-2'>
-                    <p>Job Category</p>
+                    <p>Level</p>
                     <select className='w-full px-3 py-2 border-2 rounded' onChange={(e)=> setLevel(e.target.value)}>
                         <option value='Beginner level'>Beginner level</option>
                         <option value='Intermediate level'>Intermediate level</option>

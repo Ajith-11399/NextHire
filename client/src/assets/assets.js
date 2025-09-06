@@ -200,23 +200,23 @@ export const jobsData = [
             "image": company_icon,
         },
         description: `
-        <p>Join our analytics team to help drive business decisions using data. As a Data Scientist, you will leverage your analytical skills to uncover patterns and insights that will influence our strategic direction. You will work closely with stakeholders to understand their needs and deliver impactful analyses that support our growth objectives. Your role is critical in turning data into actionable insights.</p>
-        <h2><strong>Key Responsibilities</strong></h2>
-        <ol>
-            <li>Analyze large datasets to uncover trends and patterns that inform business strategies.</li>
-            <li>Develop predictive models to forecast outcomes and improve decision-making.</li>
-            <li>Visualize data findings through reports and dashboards for stakeholders.</li>
-            <li>Collaborate with cross-functional teams to define data-driven goals.</li>
-            <li>Continuously refine data collection and analysis processes to enhance accuracy.</li>
-        </ol>
-        <h2><strong>Skills Required</strong></h2>
-        <ol>
-            <li>Proficiency in Python or R for statistical analysis and data manipulation.</li>
-            <li>Experience with data visualization tools (e.g., Tableau, Power BI).</li>
-            <li>Strong knowledge of SQL and database management.</li>
-            <li>Familiarity with machine learning techniques and algorithms.</li>
-            <li>Excellent problem-solving and critical-thinking skills.</li>
-        </ol>`,
+            <p>Join our analytics team to help drive business decisions using data. As a Data Scientist, you will leverage your analytical skills to uncover patterns and insights that will influence our strategic direction. You will work closely with stakeholders to understand their needs and deliver impactful analyses that support our growth objectives. Your role is critical in turning data into actionable insights.</p>
+            <h2><strong>Key Responsibilities</strong></h2>
+            <ol>
+                <li>Analyze large datasets to uncover trends and patterns that inform business strategies.</li>
+                <li>Develop predictive models to forecast outcomes and improve decision-making.</li>
+                <li>Visualize data findings through reports and dashboards for stakeholders.</li>
+                <li>Collaborate with cross-functional teams to define data-driven goals.</li>
+                <li>Continuously refine data collection and analysis processes to enhance accuracy.</li>
+            </ol>
+            <h2><strong>Skills Required</strong></h2>
+            <ol>
+                <li>Proficiency in Python or R for statistical analysis and data manipulation.</li>
+                <li>Experience with data visualization tools (e.g., Tableau, Power BI).</li>
+                <li>Strong knowledge of SQL and database management.</li>
+                <li>Familiarity with machine learning techniques and algorithms.</li>
+                <li>Excellent problem-solving and critical-thinking skills.</li>
+            </ol>`,
         salary: 72000,
         date: 1729681667114,
         category: "Data Science",

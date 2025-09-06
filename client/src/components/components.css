@@ -5,13 +5,13 @@ body {
 .cursor-dot {
     width: 6px;
     height: 6px;
-    background-color: #fbb527;
+    background-color: #000000;
 }
 
 .cursor-outline {
     width: 27px;
     height: 27px;
-    border: 2px solid #fbb527;
+    border: 2px solid #000000;
 }
 
 .cursor-dot,

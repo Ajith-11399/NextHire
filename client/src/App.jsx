@@ -10,23 +10,33 @@ import Addjob from "./pages/Addjob";
 import ManageJobs from "./pages/ManageJobs";
 import ViewApplications from "./pages/ViewApplications";
 import 'quill/dist/quill.snow.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import MousePointer from "./components/MousePointer";
 
 const App = () => {
-  const { showRecruiterLogin } = useContext(AppContext);
+
+  const { showRecruiterLogin, companyToken } = useContext(AppContext);
 
   return (
     <div>
       <MousePointer />
       {showRecruiterLogin && <RecruiterLogin />}
+      <ToastContainer />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/apply-job/:id" element={<ApplyJob />} />
         <Route path="/applications" element={<Applications />} />
         <Route path="/dashboard" element={<Dashboard />}>
-          <Route path="create-a-job" element={<Addjob />} />
-          <Route path="all-jobs" element={<ManageJobs />} />
-          <Route path="manage-applications" element={<ViewApplications />} />
+          {
+            companyToken 
+            ? <>
+              <Route path="create-a-job" element={<Addjob />} />
+              <Route path="all-jobs" element={<ManageJobs />} />
+              <Route path="manage-applications" element={<ViewApplications />} />
+            </>
+            : null
+          }
         </Route>
       </Routes>
     </div>
