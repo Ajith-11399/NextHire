@@ -28,14 +28,14 @@ const Dashboard = () => {
             
             {/* Navbar */}
             <div className='shadow-lg bg-white/40 backdrop-blur-lg py-4'>
-                <div className='flex items-center justify-between px-5'>
+                <div className='flex items-center justify-between px-5 md:px-20'>
                     <img onClick={(e)=> navigate('/')} src={assets.logo} className='w-[130px] cursor-pointer' alt="" />
                     {
                         companyData && (
-                            <div className='flex items-center gap-3'>
+                            <div className='flex items-center gap-4'>
                                 <p className='max-sm:hidden'>Welcome, {companyData.name}</p>
-                                <div className='relative group'>
-                                    <img src={companyData.image} className='w-8 border rounded-full' alt={companyData.name} />
+                                <div className='relative group flex items-center'>
+                                    <img src={companyData.image} className='w-10' alt={companyData.name} />
                                     <div className='absolute hidden group-hover:block top-0 right-0 z-10 text-black rounded pt-12'>
                                         <ul className='list-none m-0 p-2 bg-white rounded-md border text-sm'>
                                             <li onClick={logout} className='py-1 px-2 cursor-pointer pr-10'>logout</li>

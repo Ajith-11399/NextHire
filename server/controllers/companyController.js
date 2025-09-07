@@ -95,6 +95,27 @@ const loginCompany = async(req, res)=> {
 };
 
 
+const getAllCompanies = async(req, res)=> {
+    try {
+      
+        const companies = await Company.find({});
+        
+        res.json({
+            success: true,
+            companies
+        });
+
+    } catch (error) {
+        
+        res.json({
+            success: false,
+            message: error.message
+        });
+
+    };
+};
+
+
 const getCompanyData = async(req, res)=> {
 
     try {
@@ -268,7 +289,8 @@ const changeVisibility = async(req, res)=> {
 
 
 export { 
-    registerCompany, loginCompany, getCompanyData, postJob, 
+    registerCompany, loginCompany, getAllCompanies, 
+    getCompanyData, postJob, 
     getCompanyJobApplication, getCompanyPostedJobs, 
     changeJobApplicationsStatus, changeVisibility
 };

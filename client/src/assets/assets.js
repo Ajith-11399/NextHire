@@ -155,6 +155,7 @@ export const viewApplicationsPageData = [
 ];
 
 export const jobsData = [
+    
     {
         _id: '1',
         title: "Full Stack Developer",

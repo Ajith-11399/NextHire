@@ -16,7 +16,7 @@ const Navbar = () => {
 
     return (
         <div className="shadow-lg fixed top-0 left-0 w-full bg-white/40 backdrop-blur-lg py-4 z-10">
-            <div className="container px-5 mx-auto flex justify-between items-center">
+            <div className="container px-5 md:px-20 mx-auto flex justify-between items-center">
                 <Link to='/'>
                     <img onClick={()=> navigate('/')} src={logo} alt="" className="p-0 w-[130px]" />
                 </Link>

@@ -8,10 +8,10 @@ import { BsInstagram } from 'react-icons/bs';
 
 const Footer = () => {
     return (
-        <div className='container px-4 2xl:px-20 mx-auto flex items-center justify-between gap-4  py-3 mt-20'>
+        <div className='container px-4 2xl:px-20 mx-auto flex flex-col md:flex-row items-center justify-between gap-4  py-3 mt-20'>
             <img src={logo} width={"200px"} alt="" />
             <div>
-                <p className='flex-1 border-gray-400 px-4 text-sm text-gray-500 max-sm:hidden'>&copy; {new Date().getFullYear()} AJ. All Rights Reserved.</p>
+                <p className='flex-1 border-gray-400 px-4 text-sm text-gray-500'>&copy; {new Date().getFullYear()} AJ. All Rights Reserved.</p>
             </div>
             <div className='flex gap-2.5'>
                 <a href="https://www.linkedin.com" target='_black'>

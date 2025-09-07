@@ -122,7 +122,7 @@ const ApplyJob = () => {
                         </div>
 
                         <div className='flex flex-col justify-center text-end text-sm max-md:mx-auto max-md:text-center'>
-                            <button onClick={applyJobHandler} className='bg-[#7320f0] p-2.5 px-10 text-white rounded shadow-lg'>
+                            <button onClick={applyJobHandler} className={`${isAlreadyApplied ? 'bg-gradient-to-r from-green-600 to-emerald-500 text-white' : 'bg-gradient-to-r from-blue-600 to-blue-400 text-white'} p-2.5 px-10 text-white rounded shadow-lg`}>
                                 {isAlreadyApplied ? 'Applied' : 'Apply Now'}
                             </button>
                             <p className='mt-1 text-gray-600'>Posted {moment(jobData.date).fromNow()}</p>
@@ -135,7 +135,7 @@ const ApplyJob = () => {
                         <div className='w-full lg:w-2/3'>
                             <h2 className='font-bold text-2xl mb-4'>Job Description</h2>
                             <div className='rich-text' dangerouslySetInnerHTML={{__html:jobData.description}}></div>
-                            <button className='bg-[#7320f0] p-2.5 px-10 text-white rounded shadow-lg mt-10'>
+                            <button className={`${isAlreadyApplied ? 'bg-gradient-to-r from-green-600 to-emerald-500 text-white' : 'bg-gradient-to-r from-blue-600 to-blue-400 text-white'} p-2.5 px-10 text-white rounded shadow-lg`}>
                                 {isAlreadyApplied ? 'Applied' : 'Apply Now'}
                             </button>
                         </div>

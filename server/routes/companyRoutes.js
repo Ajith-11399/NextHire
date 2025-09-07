@@ -2,6 +2,7 @@ import express from 'express';
 import { 
     changeJobApplicationsStatus,
     changeVisibility,
+    getAllCompanies,
     getCompanyData, getCompanyJobApplication, getCompanyPostedJobs, 
     loginCompany, postJob, registerCompany 
 } from '../controllers/companyController.js';
@@ -13,6 +14,7 @@ const router = express.Router();
 router.post('/register', upload.single('image'), registerCompany);
 router.post('/login', loginCompany);
 router.get('/company', protectCompany, getCompanyData);
+router.get('/all-companies', getAllCompanies)
 router.post('/post-job', protectCompany, postJob);
 router.get('/applicants', protectCompany, getCompanyJobApplication);
 router.get('/list-jobs', protectCompany, getCompanyPostedJobs);

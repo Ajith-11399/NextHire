@@ -133,7 +133,6 @@ export const AppContextProvider = (props)=> {
             fetchUserApplications();
         };
     }, [user]);
-    
 
     const value = {
         searchFilter, setSearchFilter,
