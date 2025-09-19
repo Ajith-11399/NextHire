@@ -123,7 +123,7 @@ NextHire/
 **Clone the repository**
 
 ```bash
-git clone https://github.com/your-username/nexthire.git
+git clone https://github.com/Ajith-11399/NextHire.git
 ```
 
 **Install dependencies**
@@ -153,11 +153,11 @@ npm run dev
 Backend:
 
 ```bash
-npm start
+npm run server
 ```
 
 **Open in browser**
-Navigate to `http://localhost:5173` for the frontend.
+Navigate to `http://localhost:3000` for the frontend.
 
 ---
 
