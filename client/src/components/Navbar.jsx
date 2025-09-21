@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 // import { assets } from '../assets/assets.js';
 import logo from '../assets/logo/logo.png'
 import { useClerk, UserButton, useUser } from "@clerk/clerk-react";
@@ -14,8 +14,22 @@ const Navbar = () => {
 
     const { setShowRecruiterLogin } = useContext(AppContext);
 
+    const [ isScroll, setIsScroll ] = useState(false);
+
+    useEffect(()=> {
+        const handleScroll = ()=> {
+            if (window.scrollY >= 70) {
+                setIsScroll(true);
+            } else {
+                setIsScroll(false);
+            };
+        };
+        window.addEventListener('scroll', handleScroll);
+        return ()=> window.addEventListener('scroll', handleScroll);
+    }, []);
+
     return (
-        <div className="shadow-lg fixed top-0 left-0 w-full bg-white/40 backdrop-blur-lg py-4 z-10">
+        <div className={`fixed top-0 left-0 w-full py-4 z-10 tr ${isScroll ? 'bg-white/40 backdrop-blur-lg shadow transition-all duration-500' : 'backdrop-blur-none bg-none'} `}>
             <div className="container px-5 md:px-20 mx-auto flex justify-between items-center">
                 <Link to='/'>
                     <img onClick={()=> navigate('/')} src={logo} alt="" className="p-0 w-[130px]" />
@@ -34,8 +48,8 @@ const Navbar = () => {
                     </div>
                     :
                     <div className="flex gap-4 max-sm:text-xs">
-                        <button onClick={ e => setShowRecruiterLogin(true) } className="text-gray-600">Recruiter Login</button>
-                        <button onClick={ e => openSignIn()} className='bg-blue-600 text-white px-6 sm:px-9 py-2 rounded-full hover:bg-black hover:shadow-lg'>Login</button>
+                        <button onClick={ e => setShowRecruiterLogin(true) } className="bg-gradient-to-r from-green-600 to-emerald-500 text-white shadow-lg px-5 py-1.5 rounded">Recruiter Login</button>
+                        <button onClick={ e => openSignIn()} className='bg-gradient-to-r from-violet-600 to-fuchsia-500 text-white shadow-lg px-5 py-1.5 rounded'>Login</button>
                     </div>
                 }
                 

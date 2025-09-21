@@ -126,7 +126,7 @@ const RecruiterLogin = () => {
                     state === "Login" && <p className='text-sm text-blue-600 my-4 cursor-pointer'>Forgot password?</p>
                 } 
 
-                <button type='submit' className={`bg-blue-600 w-full text-white py-2 rounded-full ${state === 'Login' ? 'mt-0' : 'mt-4' } `}>
+                <button type='submit' className={`bg-blue-600 w-full text-white py-2 rounded ${state === 'Login' ? 'mt-0 bg-gradient-to-r from-violet-600 to-fuchsia-500 text-white' : 'mt-4 bg-gradient-to-r from-green-600 to-emerald-500' } `}>
                     {state === 'Login' ? 'login' : isTextDataSubmitted ? 'create account' : 'next' }
                 </button>
                 
